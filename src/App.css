@@ -1,38 +1,305 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dela Gothic One", cursive;
+}
+
+header {
+  width: 100%;
   text-align: center;
+  border-bottom: 1px solid white;
+  padding: 10px;
+  z-index: 999;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1 span {
+  font-size: 40px;
+  color: yellow;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header h1 {
+  font-size: 35px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+footer {
+  position: relative;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  border-top: 1px solid white;
+}
+
+footer .about h3 span {
+  color: yellow;
+  font-size: 35px;
+}
+
+footer .about h3 {
+  font-size: 25px;
+}
+
+footer .about p {
+  width: 300px;
+}
+
+.contact i {
+  font-size: 24px;
+}
+
+.contact {
+  align-self: flex-start;
+}
+
+.rights {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: white;
+  color: black;
+  padding-top: 10px;
+}
+
+.hero-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: -1;
+}
+
+.hero-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-container .hero-text {
+  position: absolute;
+  background: transparent;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+  background: #ffffff25;
+  width: 45%;
+}
+
+.hero-container .hero-text h1 {
+  letter-spacing: 1px;
+  max-width: 100%;
+}
+
+.hero-container .hero-text span {
+  color: yellow;
+}
+
+.hero-container .hero-text h4 {
+  max-width: 90%;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  line-height: 30px;
+}
+
+.card {
+  width: 300px;
+}
+
+.card img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.card-skeleton .card-img-top {
+  border: none;
+}
+
+.card-body .card-title-home {
+  color: yellow;
+}
+
+.card-body p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-md {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.view .container {
+  gap: 50px;
+}
+
+.view h1 {
+  color: rgb(226, 226, 14);
+}
+
+.view .container .text {
+  align-self: start;
+}
+
+.view .container .text h5 {
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.view .container img {
+  height: 350px;
+  object-fit: cover;
+}
+
+.view .container .text h5 span {
   color: white;
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-container {
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn-container .btn,
+.btn-container .accordion {
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.modal-text h5 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.review .review-texts h3,
+.review .review-texts h5,
+.review .review-texts p,
+.review .review-texts button {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+.review {
+  width: 600px;
+  gap: 10px;
+}
+
+.review h5 {
+  font-size: 40px;
+}
+
+.review-card-container {
+  flex-direction: column;
+}
+
+.button-container button {
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+.button-container {
+  align-self: baseline;
+}
+
+.skelt .x2-child {
+  flex-direction: column;
+}
+
+.skelt .x2-child .x2-skelt {
+  margin-top: -100px;
+  width: 43%;
+}
+
+.skelt .container div :nth-child(1) {
+  width: 310px;
+}
+
+.skelt .container{
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .container-md {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .view .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .view .container .text {
+    text-align: center;
+  }
+
+  .view .container .text h5,
+  .view .container .text h5 span {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .view .container img {
+    width: 75%;
+  }
+
+  .review-card-container .bg-secondary {
+    width: 90%;
+  }
+
+  .review-card-container .bg-secondary .review {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .review-card-container .bg-secondary .review .review-texts p {
+    max-width: 85vw;
+    font-size: 15px;
+  }
+
+  .skelt .x2-child .x2-skelt {
+    width: 90%;
+  }
+
+  .skelt .container div :nth-child(1) {
+    width: 50%;
+    margin: auto;
+  }
+
+  .skelt .container div .typo :last-child {
+    margin: auto;
+  }
+
+  .modal-dialog .modal-content .modal-text h5 {
+    font-size: 16px;
+  }
+
+  .hero-container {
+    height: 70vh;
+  }
+
+  .hero-container .hero-text {
+    width: 80%;
+    left: 20px;
+    background: #7351515c;
+  }
+
+  .hero-container .hero-text h4 {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container-md {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
